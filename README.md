@@ -1,0 +1,32 @@
+# Cookiecutter Python Project
+
+[![Actions Status](https://github.com/m0wer/cookiecutter-python-project/workflows/Test/badge.svg)](https://github.com/m0wer/cookiecutter-python-project/actions)
+
+[Cookiecutter](https://github.com/cookiecutter/cookiecutter) template
+to generate Python projects.
+
+
+
+## Documentation
+
+See [documentation](https://m0wer.github.io/cookiecutter-python-project).
+
+## Installing
+
+```bash
+cruft https://github.com/m0wer/cookiecutter-python-project
+```
+
+or
+
+```bash
+cookiecutter https://github.com/m0wer/cookiecutter-python-project
+```
+
+## Contributing
+
+See [Contributing](https://m0wer.github.io/cookiecutter-python-project/contributing).
+
+## License
+
+GPLv3
