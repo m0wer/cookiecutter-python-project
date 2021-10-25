@@ -68,6 +68,7 @@ pytz==2021.3
     # via babel
 pyyaml==6.0
     # via
+    #   -c docs/../requirements-dev.txt
     #   mkdocs
     #   pyyaml-env-tag
 pyyaml-env-tag==0.1
