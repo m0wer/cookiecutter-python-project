@@ -1,0 +1,41 @@
+---
+
+site_name: cookiecutter-python-project documentation
+site_url: https://m0wer.github.io/cookiecutter-python-project/
+repo_name: m0wer/cookiecutter-python-project
+repo_url: https://github.com/m0wer/cookiecutter-python-project
+
+plugins:
+  - search
+  - autolinks
+  - git-revision-date-localized:
+      type: timeago
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.top
+  palette:
+    # Light mode
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      primary: blue grey
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
+    # Dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      primary: blue grey
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences

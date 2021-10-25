@@ -1,3 +1,6 @@
 -c ../requirements-dev.txt
 
 mkdocs
+mkdocs-autolinks-plugin
+mkdocs-git-revision-date-localized-plugin
+mkdocs-material

@@ -35,13 +35,11 @@ clean:
 
 .PHONY: docs
 docs:
-	cd docs/
-	mkdocs serve
+	mkdocs serve --config-file docs/mkdocs.yml
 
 .PHONY: build-docs
 build-docs:
-	cd docs/
-	mkdocs build
+	mkdocs build --config-file docs/mkdocs.yml
 
 .PHONY: pull
 pull:
