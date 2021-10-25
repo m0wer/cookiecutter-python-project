@@ -30,7 +30,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.cache/pre-commit
-          key: pre-commit-2--${hashFile('.pre-commit-config.yaml')}
+          key: pre-commit-2-${hashFile('.pre-commit-config.yaml')}
           restore-keys: |
             pre-commit-2-
       - name: Lint
