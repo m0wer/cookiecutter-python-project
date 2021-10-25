@@ -34,11 +34,11 @@ repos:
       - id: flake8
 
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.17.0
+    rev: v1.26.3
     hooks:
       - id: yamllint
 
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.23.2
+    rev: v0.29.0
     hooks:
       - id: markdownlint
