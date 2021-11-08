@@ -1,10 +1,11 @@
 {
   "project_name": "Project Name",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_slug_hyphen": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
   "project_description": "{{ cookiecutter.project_name }}",
-  "requirements": "",
+  "requirements": "fastapi,overrides",
   "github_user": "github-user",
-  "github_token_pass_command": "pass secure/web/github/api_token",
+  "github_token_pass_command": "pass github_api_token",
   "author": "Author Name",
   "author_email": "author@email.org"
 }

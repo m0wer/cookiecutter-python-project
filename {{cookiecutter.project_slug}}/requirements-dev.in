@@ -1,7 +1,10 @@
 -c requirements.txt
 -c docs/requirements.txt
 
-pre-commit
+-e file:.
+
+pip-tools
 pytest
-pytest-cookies
+pytest-asyncio
+requests
 toml
