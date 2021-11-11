@@ -1,0 +1,57 @@
+---
+site_name: '{{cookiecutter.project_name}} documentation'
+site_url: '{{docs_url}}'
+repo_name: '{{repo_name}}'
+repo_url: '{{repo_url}}'
+
+plugins:
+  - search
+  - autolinks
+  - gen-files:
+      scripts:
+        - generate_reference.py
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          setup_commands:
+            - import sys
+            - sys.path.append('../')
+          selection:
+            filters:
+          rendering:
+            show_source: true
+      watch:
+        - ../{{project_slug}}
+  - git-revision-date-localized:
+      type: timeago
+      fallback_to_build_date: true
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.top
+  palette:
+    # Light mode
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      primary: blue grey
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
+    # Dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      primary: blue grey
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
