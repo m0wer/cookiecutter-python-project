@@ -10,6 +10,10 @@ binaryornot==0.4.4
     # via cookiecutter
 certifi==2021.10.8
     # via requests
+cffi==1.15.0
+    # via
+    #   cryptography
+    #   pynacl
 chardet==4.0.0
     # via binaryornot
 charset-normalizer==2.0.7
@@ -20,8 +24,12 @@ click==8.0.3
     #   cruft
     #   typer
 cookiecutter==1.7.3
-    # via cruft
+    # via
+    #   -r requirements.in
+    #   cruft
 cruft==2.10.1
+    # via -r requirements.in
+cryptography==36.0.1
     # via -r requirements.in
 gitdb==4.0.9
     # via gitpython
@@ -41,12 +49,18 @@ markupsafe==2.0.1
     # via jinja2
 poyo==0.5.0
     # via cookiecutter
+pycparser==2.21
+    # via cffi
+pynacl==1.5.0
+    # via -r requirements.in
 python-dateutil==2.8.2
     # via arrow
 python-slugify==5.0.2
     # via cookiecutter
 requests==2.26.0
     # via cookiecutter
+sh==1.14.2
+    # via -r requirements.in
 six==1.16.0
     # via
     #   cookiecutter
