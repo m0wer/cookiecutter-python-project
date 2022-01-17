@@ -84,7 +84,7 @@ def initialize_git_repository() -> None:
 def format_code() -> None:
     """Correct source code following the Black style."""
     print("    * Make repository Black linter compliant.")
-    sh.black("setup.py", "src", "docs/examples", "tests")
+    sh.black(".")
 
 
 def initialize_requirement_files() -> None:
