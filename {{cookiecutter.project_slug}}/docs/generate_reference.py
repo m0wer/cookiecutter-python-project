@@ -4,7 +4,7 @@ from pathlib import Path
 
 import mkdocs_gen_files
 
-src_root = Path("../{{project_slug}}")
+src_root = Path("../{{ cookiecutter.project_slug }}")
 for path in src_root.glob("**/*.py"):
     doc_path = Path("reference", path.relative_to(src_root)).with_suffix(".md")
 
