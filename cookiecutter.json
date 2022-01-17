@@ -6,9 +6,9 @@
   "requirements": "fastapi,overrides",
   "github_user": "github-user",
   "github_token_pass_command": "pass github_api_token",
-  "repo_name": "{{ github_user }}/{{ project_slug_hyphen }}",
-  "repo_url": "https://github.com/{{ repo_name }}",
-  "docs_url": "https://{{ github_user }}.github.io/{{ project_slug_hyphen }}/",
+  "repo_name": "{{ cookiecutter.github_user }}/{{ cookiecutter.project_slug_hyphen }}",
+  "repo_url": "https://github.com/{{ cookiecutter.repo_name }}",
+  "docs_url": "https://{{ cookiecutter.github_user }}.github.io/{{ cookiecutter.project_slug_hyphen }}/",
   "author": "Author Name",
   "author_email": "author@email.org"
 }
