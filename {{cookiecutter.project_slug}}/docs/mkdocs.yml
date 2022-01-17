@@ -1,8 +1,8 @@
 ---
-site_name: '{{cookiecutter.project_name}} documentation'
-site_url: '{{docs_url}}'
-repo_name: '{{repo_name}}'
-repo_url: '{{repo_url}}'
+site_name: '{{ cookiecutter.project_name }} documentation'
+site_url: '{{ cookiecutter.docs_url }}'
+repo_name: '{{ cookiecutter.repo_name }}'
+repo_url: '{{ cookiecutter.repo_url }}'
 
 plugins:
   - search
@@ -22,7 +22,7 @@ plugins:
           rendering:
             show_source: true
       watch:
-        - ../{{project_slug}}
+        - ../{{ cookiecutter.project_slug }}
   - git-revision-date-localized:
       type: timeago
       fallback_to_build_date: true
