@@ -1,6 +1,6 @@
 # {{cookiecutter.project_name}} documentation
 
-{{cookiecutter.description}}
+{{cookiecutter.project_description}}
 
 For a step by step tutorial that covers the installation process and running
 the project, check [Getting started](getting_started.md).
