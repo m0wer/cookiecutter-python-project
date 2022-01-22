@@ -5,10 +5,12 @@
   "project_description": "{{ cookiecutter.project_name }}",
   "requirements": "fastapi,overrides",
   "github_user": "github-user",
+  "github_organization": "{{ cookiecutter.github_user }}",
   "github_token_pass_command": "pass github_api_token",
-  "repo_name": "{{ cookiecutter.github_user }}/{{ cookiecutter.project_slug_hyphen }}",
-  "repo_url": "https://github.com/{{ cookiecutter.repo_name }}",
-  "docs_url": "https://{{ cookiecutter.github_user }}.github.io/{{ cookiecutter.project_slug_hyphen }}/",
+  "repo_name": "{{ cookiecutter.project_slug_hyphen }}",
+  "full_repo_name": "{{ cookiecutter.github_organization }}/{{ cookiecutter.repo_name }}",
+  "repo_url": "https://github.com/{{ cookiecutter.full_repo_name }}",
+  "docs_url": "https://{{ cookiecutter.github_organization }}.github.io/{{ cookiecutter.repo_name }}/",
   "author": "Author Name",
   "author_email": "author@email.org"
 }

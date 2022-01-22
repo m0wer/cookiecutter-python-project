@@ -1,16 +1,25 @@
 # {{cookiecutter.project_name}}
 
-[![Actions Status](https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_slug_hyphen}}/workflows/test/badge.svg)](https://github.com/{{cookiecutter.github_user}}/cookiecutter-python-project/actions)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![Actions Status](
+{{ cookiecutter.repo_url }}/workflows/main/badge.svg
+)]({{ cookiecutter.repo_url }}/actions)
+[![pre-commit](
+https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+)](https://github.com/pre-commit/pre-commit)
 
 ## Installation
 
 Run `pip install .`.
 
+## Development
+
+Run `make install` to install all development dependencies.
+
 ## Documentation
 
-Once installed, to render the documentation
-run (from the `docs/` directory):
+You can access the online version at <{{ cookiecutter.docs_url }}>.
+
+Alternatively, after `make install`, to render the documentation run:
 
 ```bash
 pip install -r requirements.txt
