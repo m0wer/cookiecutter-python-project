@@ -7,7 +7,7 @@ install:
 	@echo "- Installing dependencies -"
 	@echo "---------------------------"
 	python -m pip install --upgrade setuptools pip pip-tools
-	python -m piptools sync requirements.txt requirements-dev.txt docs/requirements.txt
+	python -m piptools sync requirements.txt docs/requirements.txt requirements-dev.txt
 	pre-commit install
 
 .PHONY: update
@@ -15,14 +15,14 @@ update:
 	@echo "-------------------------"
 	@echo "- Updating dependencies -"
 	@echo "-------------------------"
-	python -m piptools sync requirements.txt requirements-dev.txt docs/requirements.txt
+	python -m piptools sync requirements.txt docs/requirements.txt requirements-dev.txt
 
 	pip install --upgrade pip
 	pip-compile
-	pip-compile requirements-dev.in
 	pip-compile docs/requirements.in
+	pip-compile requirements-dev.in
 
-	python -m piptools sync requirements.txt requirements-dev.txt docs/requirements.txt
+	python -m piptools sync requirements.txt docs/requirements.txt requirements-dev.txt
 
 .PHONY: clean
 clean:
