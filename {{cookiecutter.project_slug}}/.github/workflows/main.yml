@@ -1,0 +1,76 @@
+---
+name: Main workflow (lint, test, release, docs)
+
+on:
+  push:
+
+concurrency:
+  group: main-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    environment: test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          submodules: true
+
+      - name: Setup Python 3
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Disable pre-commit
+        run: pre-commit uninstall
+
+      - name: Check lint
+        run: SKIP=no-commit-to-branch make lint
+
+      - name: Run tests
+        run: make test
+
+      # Create release if in main branch
+      - name: commitizen
+        if: github.ref == 'refs/heads/main'
+        uses: commitizen-tools/commitizen-action@0.10.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          changelog_increment_filename: body.md
+          branch: main
+          extra_requirements: typing-extensions
+
+      - name: Create GitHub release
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v1
+        with:
+          body_path: body.md
+          tag_name: ${{ env.REVISION }}
+
+      # Deploy docs
+      - name: Build docs
+        if: github.ref == 'refs/heads/main'
+        run: make docs-build
+
+      - name: Deploy docs
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/site
