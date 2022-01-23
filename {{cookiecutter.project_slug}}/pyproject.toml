@@ -5,7 +5,7 @@ markers = ["slow: marks tests as slow (deselect with '-m \"not slow\"')"]
 name = "cz_conventional_commits"
 version = "0.0.0"
 tag_format = "$version"
-version_files = ["setup.py", "{{cookiecutter.project_slug}}/entrypoints/api/main.py"]
+version_files = ["setup.py"]
 
 [tool.black]
 line-length = 79
