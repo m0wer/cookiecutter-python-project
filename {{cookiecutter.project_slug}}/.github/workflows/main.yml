@@ -5,7 +5,7 @@ on:
   push:
 
 concurrency:
-  group: main-${{ github.head_ref }}
+  group: {% raw %}main-${{ github.head_ref }}{% endraw %}
   cancel-in-progress: true
 
 jobs:
@@ -30,9 +30,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+          key: {% raw %}${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}{% endraw %}
           restore-keys: |
-            ${{ runner.os }}-pip-
+            {% raw %}${{ runner.os }}-pip-{% endraw %}
 
       - name: Install dependencies
         run: make install
@@ -51,7 +51,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: commitizen-tools/commitizen-action@0.10.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
           changelog_increment_filename: body.md
           branch: main
           extra_requirements: typing-extensions
@@ -61,7 +61,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           body_path: body.md
-          tag_name: ${{ env.REVISION }}
+          tag_name: {% raw %}${{ env.REVISION }}{% endraw %}
 
       # Deploy docs
       - name: Build docs
@@ -72,5 +72,5 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
           publish_dir: ./docs/site

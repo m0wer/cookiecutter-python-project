@@ -27,9 +27,9 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+          key: {% raw %}${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}{% endraw %}
           restore-keys: |
-            ${{ runner.os }}-pip-
+            {% raw %}${{ runner.os }}-pip-{% endraw %}
 
       - name: Install dependencies
         run: make install
@@ -54,5 +54,5 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }})
+          github_token: {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}
+          branch: {% raw %}${{ github.ref }}{% endraw %}
