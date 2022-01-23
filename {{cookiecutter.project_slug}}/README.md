@@ -1,7 +1,7 @@
 # {{cookiecutter.project_name}}
 
 [![Actions Status](
-{{ cookiecutter.repo_url }}/workflows/main/badge.svg
+{{ cookiecutter.repo_url }}/workflows/main.yml/badge.svg
 )]({{ cookiecutter.repo_url }}/actions)
 [![pre-commit](
 https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
