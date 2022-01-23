@@ -1,6 +1,6 @@
 # Cookiecutter Python Project
 
-[![Actions Status](https://github.com/m0wer/cookiecutter-python-project/workflows/Test/badge.svg)](https://github.com/m0wer/cookiecutter-python-project/actions)
+[![Actions Status](https://github.com/m0wer/cookiecutter-python-project/workflows/tests/badge.svg)](https://github.com/m0wer/cookiecutter-python-project/actions)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
 [Cookiecutter](https://github.com/cookiecutter/cookiecutter) template
