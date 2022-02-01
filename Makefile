@@ -6,7 +6,7 @@ install:
 	@echo "---------------------------"
 	@echo "- Installing dependencies -"
 	@echo "---------------------------"
-	python -m pip install --upgrade setuptools pip pip-tools
+	python -m pip install pip-tools
 	python -m piptools sync requirements.txt docs/requirements.txt requirements-dev.txt
 	pre-commit install
 
@@ -17,10 +17,9 @@ update:
 	@echo "-------------------------"
 	python -m piptools sync requirements.txt docs/requirements.txt requirements-dev.txt
 
-	pip install --upgrade pip
-	pip-compile
-	pip-compile docs/requirements.in
-	pip-compile requirements-dev.in
+	pip-compile --allow-unsafe
+	pip-compile --allow-unsafe docs/requirements.in
+	pip-compile --allow-unsafe requirements-dev.in
 
 	python -m piptools sync requirements.txt docs/requirements.txt requirements-dev.txt
 
