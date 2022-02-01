@@ -1,6 +1,8 @@
 -c requirements.txt
 -c docs/requirements.txt
 
+pip<22
+
 pre-commit
 pytest
 pytest-cookies
