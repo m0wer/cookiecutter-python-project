@@ -133,7 +133,3 @@ urllib3==1.26.7
     #   requests
 virtualenv==20.9.0
     # via pre-commit
-
-# The following packages are considered to be unsafe in a requirements file:
-pip==21.3.1
-    # via -r requirements-dev.in

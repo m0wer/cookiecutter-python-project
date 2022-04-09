@@ -6,7 +6,7 @@ install:
 	@echo "---------------------------"
 	@echo "- Installing dependencies -"
 	@echo "---------------------------"
-	python -m pip install "pip<22" pip-tools
+	python -m pip install pip-tools
 	python -m piptools sync requirements.txt docs/requirements.txt requirements-dev.txt
 	pre-commit install
 
